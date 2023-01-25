@@ -1,26 +1,33 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-class JenisSekolah(models.TextChoices):
-    SMK = 'SMK', ('Sekolah Menengah Kejuruan')
-    UNIV = 'Universitas', ('Universitas')
+class StatusSekolah(models.TextChoices):
+    SWASTA = 'Swasta', ('Swasta')
+    NEGERI = 'Negeri', ('Negeri')
 
 # Create your models here.
 class Datasekolah(models.Model):
+    npsn = models.CharField(max_length=10, null=True)
     nama = models.CharField(max_length=50)
-    alamat = models.TextField(blank=True, null=True)
-    hp = models.CharField(max_length=13, blank=True, null=True)
-    web = models.CharField(max_length=100, blank=True, null=True)
     email = models.EmailField(max_length=100, blank=True, null=True)
-    jenis_sekolah = models.CharField(
-        max_length=20,
-        choices=JenisSekolah.choices,
+    hp = models.CharField(max_length=13, blank=True, null=True)
+    alamat = models.TextField(blank=True, null=True)
+    provinsi = models.CharField(blank=True, null=True, max_length=50)
+    kabupaten_kota = models.CharField(blank=True, null=True, max_length=50)
+    kecamatan = models.CharField(blank=True, null=True, max_length=50)
+    status = models.CharField(
+        max_length=10,
+        choices=StatusSekolah.choices,
+        default=StatusSekolah.SWASTA
     )
-    # created_by
+
+    # default
+    created_by = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL, related_name="sekolah_created_by")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def __str__(self) -> str:
-        return super().__str__()
+    def __str__(self):
+        return self.nama
 
     class Meta:
         db_table = "sekolah"

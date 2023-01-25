@@ -5,7 +5,7 @@ class JenisKelamin(models.TextChoices):
     PEREMPUAN = 'P', ('Perempuan')
 
 # Create your models here.
-class Datasekolah(models.Model):
+class Datasiswa(models.Model):
     nama = models.CharField(max_length=50)
     email = models.EmailField(max_length=100, blank=True, null=True)
     hp = models.CharField(max_length=13, blank=True, null=True)
