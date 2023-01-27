@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,10 +40,8 @@
     />
   </head>
 
-  <body
-    class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500"
-  >
-    <!-- sidenav  -->
+  <body class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500">
+    
     <aside
       class="max-w-62.5 ease-nav-brand fixed inset-y-0 my-4 ml-4 block w-full -translate-x-full flex-wrap items-center justify-between overflow-y-auto rounded-2xl border-2 bg-white p-0 antialiased shadow-none transition-transform duration-200 xl:left-0 xl:translate-x-0 xl:bg-transparent"
     >
@@ -284,11 +282,7 @@
       </div>
     </aside>
 
-    <!-- end sidenav -->
-
-    <main
-      class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200"
-    >
+    <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
       <!-- Navbar -->
       <nav
         class="relative flex flex-wrap items-center justify-between px-0 py-2 mx-6 transition-all shadow-none duration-250 ease-soft-in rounded-2xl lg:flex-nowrap lg:justify-start"
@@ -327,112 +321,56 @@
         </div>
       </nav>
 
-      <!-- end Navbar -->
-
-      <!-- cards -->
       <div class="w-full px-6 py-6 mx-auto">
-        <!-- row 1 -->
-        <div class="flex flex-wrap -mx-3 justify-center">
-          <!-- card1 -->
-          <div
-            class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4"
-          >
-            <div
-              class="relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border"
-            >
-              <div class="flex-auto p-4">
-                <div class="flex flex-row -mx-3">
-                  <div class="flex-none w-2/3 max-w-full px-3">
-                    <div>
-                      <p
-                        class="mb-0 font-sans font-semibold leading-normal text-sm"
-                      >
-                        Total Siswa
-                      </p>
-                      <h6 class="mb-0 font-bold">
-                        20 Siswa
-                      </h6>
-                    </div>
-                  </div>
-                  <div class="px-3 text-right basis-1/3">
-                    <div
-                      class="inline-block w-12 h-12 text-center rounded-lg bg-gradient-to-tl from-blue-600 to-cyan-400"
-                    >
-                      <i
-                        class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"
-                      ></i>
-                    </div>
-                  </div>
-                </div>
+        <!-- table -->
+        <div class="flex flex-wrap -mx-3">
+          <div class="flex-none w-full max-w-full px-3">
+            <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-soft-xl rounded-2xl bg-clip-border">
+              <div class="p-6 pb-0 mb-0 bg-white border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
+                <h6>Data Siswa</h6>
               </div>
-            </div>
-          </div>
-
-          <!-- card2 -->
-          <div
-            class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4"
-          >
-            <div
-              class="relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border"
-            >
-              <div class="flex-auto p-4">
-                <div class="flex flex-row -mx-3">
-                  <div class="flex-none w-2/3 max-w-full px-3">
-                    <div>
-                      <p
-                        class="mb-0 font-sans font-semibold leading-normal text-sm"
-                      >
-                        Total Sekolah
-                      </p>
-                      <h6 class="mb-0 font-bold">
-                        20 Sekolah
-                      </h6>
-                    </div>
-                  </div>
-                  <div class="px-3 text-right basis-1/3">
-                    <div
-                      class="inline-block w-12 h-12 text-center rounded-lg bg-gradient-to-tl from-blue-600 to-cyan-400"
-                    >
-                      <i
-                        class="ni leading-none ni-world text-lg relative top-3.5 text-white"
-                      ></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- card3 -->
-          <div
-            class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4"
-          >
-            <div
-              class="relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border"
-            >
-              <div class="flex-auto p-4">
-                <div class="flex flex-row -mx-3">
-                  <div class="flex-none w-2/3 max-w-full px-3">
-                    <div>
-                      <p
-                        class="mb-0 font-sans font-semibold leading-normal text-sm"
-                      >
-                        Total Perusahaan
-                      </p>
-                      <h6 class="mb-0 font-bold">
-                        50 Perusahaan
-                      </h6>
-                    </div>
-                  </div>
-                  <div class="px-3 text-right basis-1/3">
-                    <div
-                      class="inline-block w-12 h-12 text-center rounded-lg bg-gradient-to-tl from-blue-600 to-cyan-400"
-                    >
-                      <i
-                        class="ni leading-none ni-paper-diploma text-lg relative top-3.5 text-white"
-                      ></i>
-                    </div>
-                  </div>
+              <div class="flex-auto px-0 pt-0 pb-2">
+                <div class="p-0 overflow-x-auto">
+                  <table class="items-center w-full mb-0 align-top border-gray-200 text-slate-500">
+                    <thead class="align-bottom bg-gradient-to-tl from-blue-600 to-cyan-400">
+                      <tr class="text-white">
+                        <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 text-white">Nama Siswa</th>
+                        <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 text-white">NISN</th>
+                        <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 text-white">Jenis Kelamin</th>
+                        <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 text-white">Tempat, Tanggal Lahir</th>
+                        <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 text-white">Alamat</th>
+                        <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 text-white">Email</th>
+                        <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 text-white">Nomor Telepon</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for siswa in list %}
+                      <tr class="text-sm">
+                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                          {{ siswa.nama }}
+                        </td>
+                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                          {{ siswa.nisn }}
+                        </td>
+                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                          {{ siswa.jenis_kelamin }}
+                        </td>
+                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                          {{ siswa.tempat_lahir }}, {{ siswa.tanggal_lahir }}
+                        </td>
+                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                          {{ siswa.alamat }}
+                        </td>
+                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                          {{ siswa.email }}
+                        </td>
+                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                          {{ siswa.hp }}
+                        </td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
@@ -441,15 +379,10 @@
       </div>
     </main>
   </body>
-  <!-- plugin for charts  -->
-  <script src="./assets/js/plugins/chartjs.min.js" async></script>
   <!-- plugin for scrollbar  -->
-  <script src="./assets/js/plugins/perfect-scrollbar.min.js" async></script>
+  <script src="../assets/js/plugins/perfect-scrollbar.min.js" async></script>
   <!-- github button -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- main script file  -->
-  <script
-    src="./assets/js/soft-ui-dashboard-tailwind.js?v=1.0.4"
-    async
-  ></script>
+  <script src="../assets/js/soft-ui-dashboard-tailwind.js?v=1.0.4" async></script>
 </html>
