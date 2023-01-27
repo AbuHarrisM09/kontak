@@ -1,23 +1,42 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
-    <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
-    <title>Soft UI Dashboard Tailwind</title>
-    <!-- Fonts and icons -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="{% static './assets/img/apple-icon.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png" href="{% static './assets/img/favicon.png' %}"
+    />
+    <title>Sign In</title>
+    <!--     Fonts and icons     -->
+    <link
+      href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' %"
+      rel="stylesheet"
+    />
     <!-- Font Awesome Icons -->
-    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/42d5adcbca.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- Nucleo Icons -->
-    <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
-    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <link
+      href="{% static './assets/css/nucleo-icons.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static './assets/css/nucleo-svg.css' %}" rel="stylesheet" />
+    <!-- Popper -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
     <!-- Main Styling -->
-    <link href="../assets/css/soft-ui-dashboard-tailwind.css?v=1.0.4" rel="stylesheet" />
-
+    <link
+      href="{% static './assets/css/soft-ui-dashboard-tailwind.css' %}"
+      rel="stylesheet"
+    />
   </head>
 
   <body class="m-0 font-sans antialiased font-normal bg-white text-start text-base leading-default text-slate-500">
@@ -39,7 +58,8 @@
                     <h4 class="relative z-10 font-bold text-center text-white bg-clip-text">SELAMAT DATANG</h4>
                   </div>
                   <div class="flex-auto p-6">
-                    <form role="form">
+                    <form action="dashboard/" method="post">
+                      {% csrf_token %}
                       <label class="mb-2 ml-1 font-bold text-xs text-slate-700">Email</label>
                       <div class="mb-4">
                         <input type="email" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow" placeholder="Email" aria-label="Email" aria-describedby="email-addon" />
@@ -49,15 +69,9 @@
                         <input type="email" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow" placeholder="Password" aria-label="Password" aria-describedby="password-addon" />
                       </div>
                       <div class="text-center">
-                        <button type="button" class="inline-block w-full px-6 py-3 mt-6 mb-0 font-bold text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer shadow-soft-md bg-x-25 bg-150 leading-pro text-xs ease-soft-in tracking-tight-soft bg-gradient-to-tl from-blue-600 to-cyan-400 hover:scale-102 hover:shadow-soft-xs active:opacity-85">Sign in</button>
+                        <button type="submit" class="inline-block w-full px-6 py-3 mt-6 mb-0 font-bold text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer shadow-soft-md bg-x-25 bg-150 leading-pro text-xs ease-soft-in tracking-tight-soft bg-gradient-to-tl from-blue-600 to-cyan-400 hover:scale-102 hover:shadow-soft-xs active:opacity-85">Log In</button>
                       </div>
                     </form>
-                  </div>
-                  <div class="p-6 px-1 pt-0 text-center bg-transparent border-t-0 border-t-solid rounded-b-2xl lg:px-2">
-                    <p class="mx-auto mb-6 leading-normal text-sm">
-                      Apakah kamu tidak memiliki akun?
-                      <a href="../pages/sign-up.html" class="relative z-10 font-semibold text-transparent bg-gradient-to-tl from-blue-600 to-cyan-400 bg-clip-text">Sign up</a>
-                    </p>
                   </div>
                 </div>
               </div>
