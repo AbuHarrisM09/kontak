@@ -6,6 +6,3 @@ def signin(request):
 
 def dashboard(request):
     return render(request, 'index.html')
-
-def list(request):
-    return HttpResponse("Ini halaman list")

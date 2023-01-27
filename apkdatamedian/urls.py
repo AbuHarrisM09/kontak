@@ -22,4 +22,6 @@ urlpatterns = [
     path('', views.signin),
     path('dashboard/', views.dashboard),
     path("", include("dataperusahaan.urls")),
+    path("", include("datasekolah.urls")),
+    path("", include("datasiswa.urls")),
 ]
