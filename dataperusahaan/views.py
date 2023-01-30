@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Dataperusahaan
 from .forms import DataperusahaanForm
 
@@ -28,4 +28,9 @@ def edit_perusahaan(request, id):
         perusahaan.jenis_perusahaan = request.POST['jenis_perusahaan']
         perusahaan.save()
         return redirect('index')
-    return render(request, 'perusahaan/edit_perusahaan.html', {'item': perusahaan})
+    return render(request, 'perusahaan/edit_perusahaan.html', {'perusahaan': perusahaan})
+
+def delete_perusahaan(request, id):
+    del_perusahaan = get_object_or_404(Dataperusahaan, id=id)
+    del_perusahaan.delete()
+    return redirect(request.META.get('HTTP_REFERER', '/perusahaan'))
