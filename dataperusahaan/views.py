@@ -16,3 +16,12 @@ def create_perusahaan(request):
     else:
         form = DataperusahaanForm()
         return render(request, 'perusahaan/create_perusahaan.html', {'form': form})
+
+def edit_perusahaan(request, id):
+    perusahaan = Dataperusahaan.objects.get(id=id)
+    if request.method == 'POST':
+        perusahaan.name = request.POST['name']
+        perusahaan.description = request.POST['description']
+        perusahaan.save()
+        return redirect('index')
+    return render(request, 'perusahaan/edit_perusahaan.html', {'item': perusahaan})
