@@ -1876,7 +1876,7 @@ h6 {
 
 .border-fuchsia-500 {
   --tw-border-opacity: 1;
-  border-color: rgb(203 12 159 / var(--tw-border-opacity));
+  border-color: rgb(0 0 125 / var(--tw-border-opacity));
 }
 
 .border-black\/12\.5 {
@@ -2080,7 +2080,7 @@ h6 {
 
 .to-slate-800 {
   --tw-gradient-to: #3a416f;
-}
+}lime
 
 .to-cyan-400 {
   --tw-gradient-to: #21d4fd;

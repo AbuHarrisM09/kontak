@@ -5,4 +5,4 @@ def signin(request):
     return render(request,'sign-in.html')
 
 def dashboard(request):
-    return render(request, 'index.html')
+    return render(request, 'dashboard.html')

@@ -1,0 +1,71 @@
+{% extends "index.html" %} {% block content %}
+<div class="flex flex-wrap -mx-3">
+  <div class="flex-none w-full max-w-full px-3">
+    <div
+      class="relative flex flex-col min-w-0 mb-6 p-6 break-words bg-white border-0 border-transparent border-solid shadow-soft-xl rounded-2xl bg-clip-border"
+    >
+      <div
+        class="flex flex-wrap -mx-3 justify-center p-6 pb-0 mb-0 bg-white border-b-0 border-b-solid rounded-t-2xl border-b-transparent"
+      >
+        <h6>Tambah Data Siswa</h6>
+      </div>
+      <div class="flex-auto px-0 pt-0 pb-2">
+        <div class="p-0 overflow-x-auto">
+          <form role="form text-left" method="post">
+            {% csrf_token %}
+            <label class="mb-2 ml-1 font-bold text-xs text-slate-700"
+              >{{form.nama.label_tag}}</label
+            >
+            <div class="mb-4">{{form.nama}}</div>
+
+            <label class="mb-2 ml-1 font-bold text-xs text-slate-700"
+              >{{form.nisn.label_tag}}</label
+            >
+            <div class="mb-4">{{form.nisn}}</div>
+
+            <label class="mb-2 ml-1 font-bold text-xs text-slate-700"
+              >{{form.jenis_kelamin.label_tag}}</label
+            >
+            <div class="mb-4">{{form.jenis_kelamin}}</div>
+
+            <label class="mb-2 ml-1 font-bold text-xs text-slate-700"
+              >{{form.tempat_lahir.label_tag}}</label
+            >
+            <div class="mb-4">{{form.tempat_lahir}}</div>
+
+            <label class="mb-2 ml-1 font-bold text-xs text-slate-700"
+              >{{form.tanggal_lahir.label_tag}}</label
+            >
+            <div class="mb-4">{{form.tanggal_lahir}}</div>
+
+            <label class="mb-2 ml-1 font-bold text-xs text-slate-700"
+              >{{form.alamat.label_tag}}</label
+            >
+            <div class="mb-4">{{form.alamat}}</div>
+
+            <label class="mb-2 ml-1 font-bold text-xs text-slate-700"
+              >{{form.email.label_tag}}</label
+            >
+            <div class="mb-4">{{form.email}}</div>
+
+            <label class="mb-2 ml-1 font-bold text-xs text-slate-700"
+              >{{form.hp.label_tag}}</label
+            >
+            <div class="mb-4">{{form.hp}}</div>
+
+            <div class="text-center">
+              <button
+                type="submit"
+                value="Create"
+                class="inline-block w-full px-6 py-3 mt-6 mb-2 font-bold text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer active:opacity-85 hover:scale-102 hover:shadow-soft-xs leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 bg-gradient-to-tl from-blue-600 to-cyan-400 hover:border-slate-700 hover:bg-slate-700 hover:text-white"
+              >
+                SAVE
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
