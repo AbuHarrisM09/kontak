@@ -20,8 +20,12 @@ def create_perusahaan(request):
 def edit_perusahaan(request, id):
     perusahaan = Dataperusahaan.objects.get(id=id)
     if request.method == 'POST':
-        perusahaan.name = request.POST['name']
-        perusahaan.description = request.POST['description']
+        perusahaan.nama = request.POST['nama']
+        perusahaan.email = request.POST['email']
+        perusahaan.web = request.POST['web']
+        perusahaan.hp = request.POST['hp']
+        perusahaan.alamat = request.POST['alamat']
+        perusahaan.jenis_perusahaan = request.POST['jenis_perusahaan']
         perusahaan.save()
         return redirect('index')
     return render(request, 'perusahaan/edit_perusahaan.html', {'item': perusahaan})
