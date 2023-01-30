@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class JenisPerusahaan(models.TextChoices):
     PT              = 'PT', ('Perseroan Terbatas')
     CV              = 'CV', ('Commanditaire Vennootschap')
