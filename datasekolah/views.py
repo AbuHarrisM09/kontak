@@ -20,19 +20,15 @@ def create_sekolah(request):
 def edit_sekolah(request, id):
     sekolah = Datasekolah.objects.get(id=id)
     if request.method == 'POST':
-        sekolah.npsn = request.POST['npsn']
-        sekolah.nama = request.POST['nama']
-        sekolah.email = request.POST['email']
-        sekolah.hp = request.POST['hp']
-        sekolah.alamat = request.POST['alamat']
-        sekolah.provinsi = request.POST['provinsi']
-        sekolah.kabupaten_kota = request.POST['kabupaten_kota']
-        sekolah.kecamatan = request.POST['kecamatan']
-        sekolah.status = request.POST['status']
-        return redirect('index')
-    return render(request, 'sekolah/edit_sekolah.html', {'sekolah':sekolah})
+        form = DatasekolahForm(request.POST, instance=sekolah)
+        if form.is_valid():
+            form.save()
+            return redirect('/sekolah')
+    else:
+        form = DatasekolahForm(instance=sekolah)
+    return render(request, 'sekolah/edit_sekolah.html', {'form': form})
 
 def delete_sekolah(request, id):
     del_sekolah = get_object_or_404(Datasekolah, id=id)
     del_sekolah.delete()
-    return redirect(request.META.get('HTTP_REFERER', '/perusahaan'))
+    return redirect(request.META.get('HTTP_REFERER', '/sekolah'))
