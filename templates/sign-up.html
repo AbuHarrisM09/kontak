@@ -1,5 +1,119 @@
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Register</button>
-</form>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="{% static './assets/img/apple-icon.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static './assets/img/favicon.png' %}"
+    />
+    <title>Sign In</title>
+    <!--     Fonts and icons     -->
+    <link
+      href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' %"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/42d5adcbca.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Nucleo Icons -->
+    <link
+      href="{% static './assets/css/nucleo-icons.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static './assets/css/nucleo-svg.css' %}" rel="stylesheet" />
+    <!-- Popper -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <!-- Main Styling -->
+    <link
+      href="{% static './assets/css/soft-ui-dashboard-tailwind.css' %}"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body
+    class="m-0 font-sans antialiased font-normal bg-white text-start text-base leading-default text-slate-500"
+  >
+    <div class="container sticky top-0 z-sticky">
+      <div class="flex flex-wrap -mx-3">
+        <div class="w-full max-w-full px-3 flex-0"></div>
+      </div>
+    </div>
+    <main class="mt-0 transition-all duration-200 ease-soft-in-out">
+      <section>
+        <div
+          class="relative flex items-center p-0 overflow-hidden bg-center bg-cover min-h-75-screen"
+        >
+          <div class="container z-10">
+            <div class="flex flex-wrap mt-0 -mx-3" style="margin-top: 10px;">
+              <div
+                class="flex flex-col w-full max-w-full px-3 mx-auto md:flex-0 shrink-0 md:w-6/12 lg:w-5/12 xl:w-4/12"
+              >
+                <div
+                  class="relative flex flex-col min-w-0 break-words bg-transparent border-2 shadow-none rounded-2xl bg-clip-border"
+                >
+                  <div
+                    class="p-6 pb-0 mb-0 bg-gradient-to-tl from-blue-600 to-slate-800 border-b-0 rounded-t-2xl"
+                  >
+                    <h4
+                      class="relative z-10 font-bold text-center text-white bg-clip-text"
+                    >
+                      REGISTRASI
+                    </h4>
+                  </div>
+                  <div class="flex-auto p-6">
+                    <form method="post">
+                      {% csrf_token %} 
+                      <label class="mb-2 ml-1 font-bold text-xs text-slate-700"
+                        >{{form.username.label_tag}}</label
+                      >
+                      <input type="text" class="mb-4 text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" name="{{form.username.html_name}}"></input>
+
+                      <label class="mb-2 ml-1 font-bold text-xs text-slate-700"
+                        >{{form.email.label_tag}}</label
+                      >
+                      <input type="password" class="mb-4 text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" name="{{form.email.html_name}}"></input>
+
+                      <label class="mb-2 ml-1 font-bold text-xs text-slate-700"
+                        >{{form.password.label_tag}}</label
+                      >
+                      <input type="text" class="mb-4 text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" name="{{form.password.html_name}}"></input>
+
+                      <label class="mb-2 ml-1 font-bold text-xs text-slate-700"
+                        >{{form.password2.label_tag}}</label
+                      >
+                      <input type="password" class="mb-4 text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" name="{{form.password2.html_name}}"></input>
+                      <button type="submit" class="inline-block w-full px-6 py-3 mt-6 mb-2 font-bold text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer active:opacity-85 hover:scale-102 hover:shadow-soft-xs leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 bg-gradient-to-tl from-blue-600 to-slate-800 hover:border-slate-700 hover:bg-slate-700 hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+                          <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                        </svg>
+                        Login
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+  <!-- plugin for scrollbar  -->
+  <script src="../assets/js/plugins/perfect-scrollbar.min.js" async></script>
+  <!-- main script file  -->
+  <script
+    src="../assets/js/soft-ui-dashboard-tailwind.js?v=1.0.4"
+    async
+  ></script>
+</html>

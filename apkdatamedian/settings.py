@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'datasiswa',
     'datasekolah',
     'dataperusahaan',
+    'templatetags',
 ]
 
 MIDDLEWARE = [
